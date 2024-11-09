@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-color: #000000; /* Preto sólido para o fundo */
+    --text-color: #f0f0f0;
+    --highlight-color: #f5a623; /* Laranja vibrante */
+    --secondary-bg: #1c1c1c;
+    --border-color: #2a2a2a;
+    --link-color: #ffa500; /* Laranja mais forte */
+    --button-bg: #f5a623; /* Fundo laranja para os botões */
+    --button-text: #000000; /* Texto dos botões em preto */
+    --button-hover: #d48800; /* Laranja mais escuro para o hover */
+    --input-bg: #262626;
+}
+
+html, body {
+    height: 100%; /* Garante que o html e body ocupem toda a altura da tela */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color); /* Fundo completamente preto */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    color: var(--highlight-color);
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: var(--button-bg); /* Laranja para os botões */
+    color: var(--button-text); /* Texto dos botões em preto */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    flex: 0 1 auto;
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3); /* Sombra laranja */
+    outline: none; /* Remove o contorno azul */
+}
+
+button:focus, button:active {
+    outline: none; /* Remove o contorno azul */
+    box-shadow: none; /* Remove qualquer sombra interna */
+    -webkit-tap-highlight-color: transparent; /* Remove o highlight azul no toque */
+}
+
+button:hover {
+    background-color: var(--button-hover); /* Hover com laranja mais escuro */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button i {
+    margin-right: 0.5rem;
+}
+
+.respostas {
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.ac {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: var(--secondary-bg);
+}
+
+.ac-header {
+    background-color: var(--secondary-bg);
+}
+
+.ac-trigger {
+    color: var(--highlight-color);
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    outline: none; /* Remove contorno azul */
+}
+
+.ac-trigger:hover {
+    color: var(--link-color);
+}
+
+.ac-panel {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.ac-panel div {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+.ac-panel p, .ac-panel h1, .ac-panel h2, .ac-panel h3, .ac-panel h4, .ac-panel h5, .ac-panel h6, .ac-panel ul, .ac-panel ol {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+.ac-panel a {
+    color: var(--link-color);
+}
+
+.ac-panel code {
+    background-color: var(--bg-color);
+    color: var(--highlight-color);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.ac-panel pre {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.ac-panel pre code {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0;
+}
+
+#loading {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: var(--highlight-color);
+}
+
+#loading i {
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+    .botoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Accordion JS overrides */
+.ac {
+    background-color: var(--secondary-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.ac .ac-header, .ac .ac-trigger, .ac .ac-panel, .ac .ac-panel * {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text-color) !important;
+}
+
+.ac .ac-panel code {
+    background-color: var(--bg-color) !important;
+    color: var(--highlight-color) !important;
+}
+
+.ac .ac-panel pre {
+    background-color: var(--bg-color) !important;
+}
+
+.ac .ac-panel pre code {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
